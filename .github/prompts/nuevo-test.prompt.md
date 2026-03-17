@@ -41,4 +41,4 @@ cd "c:\ZooGit\Organic\Components.PromocionesV2"
 dotnet test ZooLogicSA.Promociones.Tests\ZooLogicSA.Promociones.Tests.csproj
 ```
 
-Consultar [tests.instructions.md](.github/instructions/tests.instructions.md) para los patrones de testing.
+Consultar [tests.instructions.md](../instructions/tests.instructions.md) para los patrones de testing.

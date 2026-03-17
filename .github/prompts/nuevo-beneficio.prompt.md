@@ -38,4 +38,4 @@ dotnet build ZooLogicSA.Promociones.sln
 dotnet test ZooLogicSA.Promociones.Tests\ZooLogicSA.Promociones.Tests.csproj
 ```
 
-Consultar [beneficios.instructions.md](.github/instructions/beneficios.instructions.md) para los patrones exactos.
+Consultar [beneficios.instructions.md](../instructions/beneficios.instructions.md) para los patrones exactos.

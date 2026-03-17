@@ -37,4 +37,4 @@ Analizar la configuración de la siguiente promoción del Motor de Promociones:
 ### 5. Tests relacionados
 Buscar en `ZooLogicSA.Promociones.Tests/` los tests que verifican esta promoción o comportamiento similar.
 
-Consultar [dominio.instructions.md](.github/instructions/dominio.instructions.md) para el modelo de datos.
+Consultar [dominio.instructions.md](../instructions/dominio.instructions.md) para el modelo de datos.
