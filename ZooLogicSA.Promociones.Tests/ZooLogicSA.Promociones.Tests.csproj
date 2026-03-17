@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\MSTest.TestAdapter.3.0.4\build\net462\MSTest.TestAdapter.props" Condition="Exists('..\packages\MSTest.TestAdapter.3.0.4\build\net462\MSTest.TestAdapter.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A358C492-A351-401D-92A8-9AD2964FFD0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZooLogicSA.Promociones.Tests</RootNamespace>
+    <AssemblyName>ZooLogicSA.Promociones.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime, Version=2.7.7.3, Culture=neutral, PublicKeyToken=d7701e059243744f">
+      <HintPath>..\packages\Zoo.nHibernate.2.1.2.4000\lib\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zoo.nHibernate.2.1.2.4000\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Utility, Version=0.1.0.39272, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zoo.nHibernate.2.1.2.4000\lib\Antlr3.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.1.1.0\lib\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.DynamicProxy.2.1.0\lib\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Data.11.2.11\lib\DevExpress.Data.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v11.2.Core, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.RichEdit.11.2.11\lib\DevExpress.RichEdit.v11.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Utils.11.2.11\lib\DevExpress.Utils.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraBars.11.2.11\lib\DevExpress.XtraBars.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v11.2.Design, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraBars.11.2.11\lib\DevExpress.XtraBars.v11.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraEditors.11.2.11\lib\DevExpress.XtraEditors.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v11.2.Design, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraEditors.11.2.11\lib\DevExpress.XtraEditors.v11.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraGrid.11.2.11\lib\DevExpress.XtraGrid.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v11.2.Design, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraGrid.11.2.11\lib\DevExpress.XtraGrid.v11.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraLayout.11.2.11\lib\DevExpress.XtraLayout.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v11.2.Design, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraLayout.11.2.11\lib\DevExpress.XtraLayout.v11.2.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraRichEdit.11.2.11\lib\DevExpress.XtraRichEdit.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Design, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraRichEdit.11.2.11\lib\DevExpress.XtraRichEdit.v11.2.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Extensions, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraRichEdit.11.2.11\lib\DevExpress.XtraRichEdit.v11.2.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Printing, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraRichEdit.11.2.11\lib\DevExpress.XtraRichEdit.v11.2.Printing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zoo.nHibernate.2.1.2.4000\lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Ionic.Zip.1.9.1.8\lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zoo.nHibernate.2.1.2.4000\lib\LinFu.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.3.0.4\lib\net462\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.3.0.4\lib\net462\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zoo.nHibernate.2.1.2.4000\lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.LinFu, Version=2.1.2.4000, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zoo.nHibernate.2.1.2.4000\lib\NHibernate.ByteCode.LinFu.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StringTemplate, Version=3.0.1.6846, Culture=neutral, PublicKeyToken=beee492b52c41e85, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.1.1\lib\StringTemplate.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.2.6.1.0\lib\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ZooLogicSA.Core, Version=25.7.9999.343, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZooLogicSA.Core.25.7.9999.343\lib\net472\ZooLogicSA.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZoologicSA.Core.Common, Version=25.7.9999.120, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZoologicSA.Core.Common.25.7.9999.120\lib\net472\ZoologicSA.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ZooLogicSA.Core.DatosAplicacion, Version=25.7.9999.343, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\ZooLogicSA.Core.DatosAplicacion.25.7.9999.343\lib\net472\ZooLogicSA.Core.DatosAplicacion.dll</HintPath>
+    </Reference>
+    <Reference Include="ZooLogicSA.Core.Formularios, Version=25.7.9999.245, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZooLogicSA.Core.Formularios.25.7.9999.245\lib\net472\ZooLogicSA.Core.Formularios.dll</HintPath>
+    </Reference>
+    <Reference Include="ZooLogicSA.Core.StructureMapContainer, Version=25.7.9999.120, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZooLogicSA.Core.StructureMapContainer.25.7.9999.120\lib\net472\ZooLogicSA.Core.StructureMapContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="ZooLogicSA.ZED, Version=25.7.9999.13, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\ZooLogicSA.ZED.25.7.9999.13\lib\net472\ZooLogicSA.ZED.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdaptadorEleccionVisualizacionPromocionAsistenteTypeTest.cs" />
+    <Compile Include="AdaptadorEleccionParticipanteTypeTest.cs" />
+    <Compile Include="CasosBugs.cs" />
+    <Compile Include="CasosDePrueba_AFU.cs" />
+    <Compile Include="CasosNoSoportadosTest.cs" />
+    <Compile Include="CasosPruebaStock.cs" />
+    <Compile Include="ComparadorDebeSerComienzaConTest.cs" />
+    <Compile Include="ComparadorDebeSerDistintoATest.cs" />
+    <Compile Include="ComparadorDebeSerTermincaConTest.cs" />
+    <Compile Include="ComparadorDebeSerContieneATest.cs" />
+    <Compile Include="ComparadorDeParticipantesXMLTest.cs" />
+    <Compile Include="DebugTools.cs" />
+    <Compile Include="EvaluadorReglasDeParticipanteCantidadTest.cs" />
+    <Compile Include="FactoriaRecursosAdicionalesParaTest.cs" />
+    <Compile Include="InformacionPromocionTest.cs" />
+    <Compile Include="InformantePromocionesParaGrillaOrganicTest.cs" />
+    <Compile Include="AdaptadorFactorTest.cs" />
+    <Compile Include="ExtensionesMaskedTextBoxTest.cs" />
+    <Compile Include="FactoryBeneficioTest.cs" />
+    <Compile Include="InformantePromocionesTest.cs" />
+    <Compile Include="InterpreteDatosParticipanteXMLTest.cs" />
+    <Compile Include="InterpreteEstructuraPromocionTest.cs" />
+    <Compile Include="InterpreteParticipanteFiltroTest.cs" />
+    <Compile Include="InterpreteXMLPromocionTest.cs" />
+    <Compile Include="JoineadorDeParticipantesTest.cs" />
+    <Compile Include="EvaluadorTest.cs" />
+    <Compile Include="ComprobanteXMLTest.cs" />
+    <Compile Include="LlevaAValorDeOtraListaDePreciosTest.cs" />
+    <Compile Include="ManagerValidacionesTest.cs" />
+    <Compile Include="MontoAplicaDescuentoTest.cs" />
+    <Compile Include="MontoAplicaMontoFijoTest.cs" />
+    <Compile Include="MotorPromocionesTest.cs" />
+    <Compile Include="MotorPromociones_InformarPromocionesConCumplimientoParcial.cs" />
+    <Compile Include="PromocionesBancariasTest.cs" />
+    <Compile Include="PromocionesTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SerializadorTest.cs" />
+    <Compile Include="ReglaTest.cs" />
+    <Compile Include="TestIntegridad.cs" />
+    <Compile Include="PromocionesConMontoTest.cs" />
+    <Compile Include="TransformadorComprobantesTest.cs" />
+    <Compile Include="KontrolerAsistenteTest.cs" />
+    <Compile Include="ArmadorDeLeyendaTest.cs" />
+    <Compile Include="DescuentoBancarioConTopeTest.cs" />
+    <Compile Include="LLevaXpagaYTest.cs" />
+    <Compile Include="LlevaXtienedescuentoYTest.cs" />
+    <Compile Include="RebajaXcaracteristicaTest.cs" />
+    <Compile Include="DescuentoXcaracteristicaTest.cs" />
+    <Compile Include="CalculadorDeCombinacionesDeParticipantesTest.cs" />
+    <Compile Include="CalculadorDeIncumplimientoTest.cs" />
+    <Compile Include="ExtractorDeCoincidenciasDesdeConsumoTest.cs" />
+    <Compile Include="CalculadorDePartipantesCumplidosTest.cs" />
+    <Compile Include="CalculadorDeParticipantesFaltantesTest.cs" />
+    <Compile Include="SimuladorDeResultadoReglasTest.cs" />
+    <Compile Include="ComparadorDebeSerMayorATest.cs" />
+    <Compile Include="ComparadorDebeSerMenorATest.cs" />
+    <Compile Include="ComparadorDebeSerIgualTest.cs" />
+    <Compile Include="EvaluadorReglasDeParticipanteTest.cs" />
+    <Compile Include="PromocionesAutomaticasTest.cs" />
+    <Compile Include="ValidarAtributoCantidadTest.cs" />
+    <Compile Include="ValidarCantidadDeRegaloEnBeneficioTest.cs" />
+    <Compile Include="ValidarCantidadParticipantesTest.cs" />
+    <Compile Include="ValidarCuotasSinRecargoTest.cs" />
+    <Compile Include="ValidarListaCondicionTest.cs" />
+    <Compile Include="ValidarPromocionTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZooLogicSA.Promociones.Asistente\ZooLogicSA.Promociones.Asistente.csproj">
+      <Project>{0c6a421f-7fa3-419c-80ac-5569b42c6029}</Project>
+      <Name>ZooLogicSA.Promociones.Asistente</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZooLogicSA.Promociones.Negocio\ZooLogicSA.Promociones.Negocio.csproj">
+      <Project>{10A26808-0948-498B-A55D-271329E016BF}</Project>
+      <Name>ZooLogicSA.Promociones.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZooLogicSA.Promociones.UI\ZooLogicSA.Promociones.UI.csproj">
+      <Project>{A1602DD4-972C-4E51-86D1-50D72ABE8AFA}</Project>
+      <Name>ZooLogicSA.Promociones.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZooLogicSA.Promociones\ZooLogicSA.Promociones.csproj">
+      <Project>{dbe6674b-f612-4f69-94f3-9a7847bd8d72}</Project>
+      <Name>ZooLogicSA.Promociones</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ionic.Zip.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.3.0.4\build\net462\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.3.0.4\build\net462\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.3.0.4\build\net462\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.3.0.4\build\net462\MSTest.TestAdapter.targets'))" />
+  </Target>
+  <Import Project="..\packages\MSTest.TestAdapter.3.0.4\build\net462\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.3.0.4\build\net462\MSTest.TestAdapter.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

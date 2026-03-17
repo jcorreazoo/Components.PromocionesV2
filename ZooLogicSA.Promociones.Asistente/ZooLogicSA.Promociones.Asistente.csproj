@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{0C6A421F-7FA3-419C-80AC-5569B42C6029}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZooLogicSA.Promociones.Asistente</RootNamespace>
+    <AssemblyName>ZooLogicSA.Promociones.Asistente</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ArmadoDeLeyenda\ArmadorDeLeyendaSegunParticipanteFaltanteComprobante.cs" />
+    <Compile Include="ArmadoDeLeyenda\FactoriaArmadorDeLeyenda.cs" />
+    <Compile Include="ArmadoDeLeyenda\IArmadorDeLeyendaSegunParticipanteFaltante.cs" />
+    <Compile Include="ArmadoDeLeyenda\ArmadorDeLeyenda.cs" />
+    <Compile Include="ArmadoDeLeyenda\ArmadorDeLeyendaSegunParticipanteFaltanteGenerico.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="FactoryAsistente.cs" />
+    <Compile Include="FrmAsistente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAsistente.Designer.cs">
+      <DependentUpon>FrmAsistente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IArmadorDeLeyenda.cs" />
+    <Compile Include="KontrolerAsistente.cs" />
+    <Compile Include="ObservadorPromocionSingleThread.cs" />
+    <Compile Include="ParametrosAsistente.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="PromocionesEstado.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAsistente.resx">
+      <DependentUpon>FrmAsistente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\PromocionesEstado.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Data.11.2.11\lib\DevExpress.Data.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v11.2.Core, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Printing.11.2.11\lib\DevExpress.Printing.v11.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v11.2.Core, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.RichEdit.11.2.11\lib\DevExpress.RichEdit.v11.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Utils.11.2.11\lib\DevExpress.Utils.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraBars.11.2.11\lib\DevExpress.XtraBars.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraEditors.11.2.11\lib\DevExpress.XtraEditors.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraGrid.11.2.11\lib\DevExpress.XtraGrid.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraLayout.11.2.11\lib\DevExpress.XtraLayout.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.XtraRichEdit.11.2.11\lib\DevExpress.XtraRichEdit.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZooLogicSA.Core, Version=25.7.9999.343, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZooLogicSA.Core.25.7.9999.343\lib\net472\ZooLogicSA.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZoologicSA.Core.Common, Version=25.7.9999.120, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZoologicSA.Core.Common.25.7.9999.120\lib\net472\ZoologicSA.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ZooLogicSA.Core.DatosAplicacion, Version=25.7.9999.343, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\ZooLogicSA.Core.DatosAplicacion.25.7.9999.343\lib\net472\ZooLogicSA.Core.DatosAplicacion.dll</HintPath>
+    </Reference>
+    <Reference Include="ZooLogicSA.Core.Formularios, Version=25.7.9999.245, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZooLogicSA.Core.Formularios.25.7.9999.245\lib\net472\ZooLogicSA.Core.Formularios.dll</HintPath>
+    </Reference>
+    <Reference Include="ZooLogicSA.Core.StructureMapContainer, Version=25.7.9999.120, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZooLogicSA.Core.StructureMapContainer.25.7.9999.120\lib\net472\ZooLogicSA.Core.StructureMapContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="ZooLogicSA.ZED, Version=25.7.9999.13, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\ZooLogicSA.ZED.25.7.9999.13\lib\net35\ZooLogicSA.ZED.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZooLogicSA.Promociones\ZooLogicSA.Promociones.csproj">
+      <Project>{dbe6674b-f612-4f69-94f3-9a7847bd8d72}</Project>
+      <Name>ZooLogicSA.Promociones</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blanco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ionic.Zip.xml" />
+    <Content Include="Resources\Amarillo.jpg" />
+    <Content Include="Resources\favoritos.png" />
+    <Content Include="Resources\Rojo.jpg" />
+    <Content Include="Resources\Verde.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
