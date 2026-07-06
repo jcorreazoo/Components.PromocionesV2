@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10A26808-0948-498B-A55D-271329E016BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZooLogicSA.Promociones.Negocio</RootNamespace>
+    <AssemblyName>ZooLogicSA.Promociones.Negocio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Setup|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRules>-Microsoft.Design#CA1012;-Microsoft.Design#CA1031;-Microsoft.Design#CA2210;-Microsoft.Design#CA1040;-Microsoft.Design#CA1020;+!Microsoft.Design#CA1010;+!Microsoft.Design#CA1050;+!Microsoft.Design#CA1026;+!Microsoft.Design#CA1019;+!Microsoft.Design#CA1047;+!Microsoft.Design#CA1000;+!Microsoft.Design#CA1048;-Microsoft.Design#CA1051;-Microsoft.Design#CA1045;+!Microsoft.Design#CA1038;+!Microsoft.Design#CA1035;+!Microsoft.Design#CA1063;-Microsoft.Design#CA1032;+!Microsoft.Design#CA1023;+!Microsoft.Design#CA1033;-Microsoft.Design#CA1017;+!Microsoft.Design#CA1018;+!Microsoft.Design#CA1041;+!Microsoft.Design#CA1025;+!Microsoft.Design#CA1052;+!Microsoft.Design#CA1058;+!Microsoft.Design#CA1001;+!Microsoft.Design#CA1049;+!Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1308;+!Microsoft.Globalization#CA1300;+!Microsoft.Interoperability#CA1402;+!Microsoft.Interoperability#CA1410;+!Microsoft.Interoperability#CA1409;+!Microsoft.Interoperability#CA1408;+!Microsoft.Maintainability#CA1502;-Microsoft.Maintainability#CA1504;-Microsoft.Maintainability#CA1500;-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1700;+!Microsoft.Naming#CA1712;-Microsoft.Naming#CA1714;-Microsoft.Naming#CA1704;+!Microsoft.Naming#CA1715;+!Microsoft.Naming#CA1716;-Microsoft.Naming#CA1719;-Microsoft.Naming#CA1701;-Microsoft.Naming#CA1703;+!Microsoft.Naming#CA1724;+!Microsoft.Performance#CA1809;+!Microsoft.Performance#CA1813;+!Microsoft.Performance#CA1823;+!Microsoft.Performance#CA1800;+!Microsoft.Performance#CA1805;+!Microsoft.Performance#CA1810;-Microsoft.Performance#CA1822;+!Microsoft.Performance#CA1815;+!Microsoft.Performance#CA1814;+!Microsoft.Performance#CA1819;+!Microsoft.Performance#CA1821;+!Microsoft.Performance#CA1804;+!Microsoft.Performance#CA1820;+!Microsoft.Performance#CA1802;-Microsoft.Reliability#CA2001;+!Microsoft.Security#CA2115;+!Microsoft.Security#CA2104;+!Microsoft.Usage#CA2236;+!Microsoft.Usage#CA1816;+!Microsoft.Usage#CA2213;+!Microsoft.Usage#CA2214;+!Microsoft.Usage#CA2222;+!Microsoft.Usage#CA2212;+!Microsoft.Usage#CA2219;+!Microsoft.Usage#CA2221;+!Microsoft.Usage#CA2220;+!Microsoft.Usage#CA2229;+!Microsoft.Usage#CA2235;+!Microsoft.Usage#CA2237;+!Microsoft.Usage#CA2232;+!Microsoft.Usage#CA2223;+!Microsoft.Usage#CA2226;+!Microsoft.Usage#CA2224;+!Microsoft.Usage#CA2200;+!Microsoft.Usage#CA1801;+!ZooLogicSA.Design#ZLCA1001</CodeAnalysisRules>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRules>-Microsoft.Design#CA1012;-Microsoft.Design#CA1031;-Microsoft.Design#CA2210;-Microsoft.Design#CA1040;-Microsoft.Design#CA1020;+!Microsoft.Design#CA1010;+!Microsoft.Design#CA1050;+!Microsoft.Design#CA1026;+!Microsoft.Design#CA1019;+!Microsoft.Design#CA1047;+!Microsoft.Design#CA1000;+!Microsoft.Design#CA1048;-Microsoft.Design#CA1051;-Microsoft.Design#CA1045;+!Microsoft.Design#CA1038;+!Microsoft.Design#CA1035;+!Microsoft.Design#CA1063;-Microsoft.Design#CA1032;+!Microsoft.Design#CA1023;+!Microsoft.Design#CA1033;-Microsoft.Design#CA1017;+!Microsoft.Design#CA1018;+!Microsoft.Design#CA1041;+!Microsoft.Design#CA1025;+!Microsoft.Design#CA1052;+!Microsoft.Design#CA1058;+!Microsoft.Design#CA1001;+!Microsoft.Design#CA1049;+!Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1308;+!Microsoft.Globalization#CA1300;+!Microsoft.Interoperability#CA1402;+!Microsoft.Interoperability#CA1410;+!Microsoft.Interoperability#CA1409;+!Microsoft.Interoperability#CA1408;+!Microsoft.Maintainability#CA1502;-Microsoft.Maintainability#CA1504;-Microsoft.Maintainability#CA1500;-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1700;+!Microsoft.Naming#CA1712;-Microsoft.Naming#CA1714;-Microsoft.Naming#CA1704;+!Microsoft.Naming#CA1715;+!Microsoft.Naming#CA1716;-Microsoft.Naming#CA1719;-Microsoft.Naming#CA1701;-Microsoft.Naming#CA1703;+!Microsoft.Naming#CA1724;+!Microsoft.Performance#CA1809;+!Microsoft.Performance#CA1813;+!Microsoft.Performance#CA1823;+!Microsoft.Performance#CA1800;+!Microsoft.Performance#CA1805;+!Microsoft.Performance#CA1810;-Microsoft.Performance#CA1822;+!Microsoft.Performance#CA1815;+!Microsoft.Performance#CA1814;+!Microsoft.Performance#CA1819;+!Microsoft.Performance#CA1821;+!Microsoft.Performance#CA1804;+!Microsoft.Performance#CA1820;+!Microsoft.Performance#CA1802;-Microsoft.Reliability#CA2001;+!Microsoft.Security#CA2115;+!Microsoft.Security#CA2104;+!Microsoft.Usage#CA2236;+!Microsoft.Usage#CA1816;+!Microsoft.Usage#CA2213;+!Microsoft.Usage#CA2214;+!Microsoft.Usage#CA2222;+!Microsoft.Usage#CA2212;+!Microsoft.Usage#CA2219;+!Microsoft.Usage#CA2221;+!Microsoft.Usage#CA2220;+!Microsoft.Usage#CA2229;+!Microsoft.Usage#CA2235;+!Microsoft.Usage#CA2237;+!Microsoft.Usage#CA2232;+!Microsoft.Usage#CA2223;+!Microsoft.Usage#CA2226;+!Microsoft.Usage#CA2224;+!Microsoft.Usage#CA2200;+!Microsoft.Usage#CA1801;+!ZooLogicSA.Design#ZLCA1001</CodeAnalysisRules>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Setup|x86'">
+    <OutputPath>bin\x86\Setup\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRules>-Microsoft.Design#CA1012;-Microsoft.Design#CA1031;-Microsoft.Design#CA2210;-Microsoft.Design#CA1040;-Microsoft.Design#CA1020;+!Microsoft.Design#CA1010;+!Microsoft.Design#CA1050;+!Microsoft.Design#CA1026;+!Microsoft.Design#CA1019;+!Microsoft.Design#CA1047;+!Microsoft.Design#CA1000;+!Microsoft.Design#CA1048;-Microsoft.Design#CA1051;-Microsoft.Design#CA1045;+!Microsoft.Design#CA1038;+!Microsoft.Design#CA1035;+!Microsoft.Design#CA1063;-Microsoft.Design#CA1032;+!Microsoft.Design#CA1023;+!Microsoft.Design#CA1033;-Microsoft.Design#CA1017;+!Microsoft.Design#CA1018;+!Microsoft.Design#CA1041;+!Microsoft.Design#CA1025;+!Microsoft.Design#CA1052;+!Microsoft.Design#CA1058;+!Microsoft.Design#CA1001;+!Microsoft.Design#CA1049;+!Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1308;+!Microsoft.Globalization#CA1300;+!Microsoft.Interoperability#CA1402;+!Microsoft.Interoperability#CA1410;+!Microsoft.Interoperability#CA1409;+!Microsoft.Interoperability#CA1408;+!Microsoft.Maintainability#CA1502;-Microsoft.Maintainability#CA1504;-Microsoft.Maintainability#CA1500;-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1700;+!Microsoft.Naming#CA1712;-Microsoft.Naming#CA1714;-Microsoft.Naming#CA1704;+!Microsoft.Naming#CA1715;+!Microsoft.Naming#CA1716;-Microsoft.Naming#CA1719;-Microsoft.Naming#CA1701;-Microsoft.Naming#CA1703;+!Microsoft.Naming#CA1724;+!Microsoft.Performance#CA1809;+!Microsoft.Performance#CA1813;+!Microsoft.Performance#CA1823;+!Microsoft.Performance#CA1800;+!Microsoft.Performance#CA1805;+!Microsoft.Performance#CA1810;-Microsoft.Performance#CA1822;+!Microsoft.Performance#CA1815;+!Microsoft.Performance#CA1814;+!Microsoft.Performance#CA1819;+!Microsoft.Performance#CA1821;+!Microsoft.Performance#CA1804;+!Microsoft.Performance#CA1820;+!Microsoft.Performance#CA1802;-Microsoft.Reliability#CA2001;+!Microsoft.Security#CA2115;+!Microsoft.Security#CA2104;+!Microsoft.Usage#CA2236;+!Microsoft.Usage#CA1816;+!Microsoft.Usage#CA2213;+!Microsoft.Usage#CA2214;+!Microsoft.Usage#CA2222;+!Microsoft.Usage#CA2212;+!Microsoft.Usage#CA2219;+!Microsoft.Usage#CA2221;+!Microsoft.Usage#CA2220;+!Microsoft.Usage#CA2229;+!Microsoft.Usage#CA2235;+!Microsoft.Usage#CA2237;+!Microsoft.Usage#CA2232;+!Microsoft.Usage#CA2223;+!Microsoft.Usage#CA2226;+!Microsoft.Usage#CA2224;+!Microsoft.Usage#CA2200;+!Microsoft.Usage#CA1801;+!ZooLogicSA.Design#ZLCA1001</CodeAnalysisRules>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\..\..\..\..\..\..\..\ZooLogicSA\Herramientas\Configuraciones\CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Beneficios\BeneficioType.cs" />
+    <Compile Include="Clases\Beneficios\FactoryBeneficio.cs" />
+    <Compile Include="Clases\Beneficios\ValorBeneficio.cs" />
+    <Compile Include="Clases\CodigoDetalleType.cs" />
+    <Compile Include="Clases\EstructuraPromocion.cs" />
+    <Compile Include="Clases\Parametros.cs" />
+    <Compile Include="Clases\Promociones\LlevaAValorDeOtraListaDePrecios.cs" />
+    <Compile Include="Clases\Promociones\MontoAplicaMontoFijo.cs" />
+    <Compile Include="Clases\Promociones\DescuentoBancarioConTope.cs" />
+    <Compile Include="Clases\Promociones\DescuentoXcaracteristica.cs" />
+    <Compile Include="Clases\Promociones\LLevaXpagaY.cs" />
+    <Compile Include="Clases\Promociones\LlevaXtienedescuentoY.cs" />
+    <Compile Include="Clases\Promociones\MontoAplicaDescuento.cs" />
+    <Compile Include="Clases\Promociones\RebajaXcaracteristica.cs" />
+    <Compile Include="Clases\FactoryPromociones.cs" />
+    <Compile Include="Clases\Validaciones\IValidacionPromocion.cs" />
+    <Compile Include="Clases\Validaciones\ValidacionPromoType.cs" />
+    <Compile Include="Clases\Validaciones\ValidarAtributoCantidad.cs" />
+    <Compile Include="Clases\Validaciones\ValidarCantidadDeRegaloEnBeneficio.cs" />
+    <Compile Include="Clases\Validaciones\ValidarCantidadParticipantes.cs" />
+    <Compile Include="Clases\Validaciones\ValidarCuotasSinRecargo.cs" />
+    <Compile Include="Clases\Validaciones\ValidarDescuento.cs" />
+    <Compile Include="Clases\Validaciones\ValidarListaCondicion.cs" />
+    <Compile Include="Clases\Validaciones\ValidarPromocion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Clases\TipoPromocion.cs" />
+    <None Include="Settings.StyleCop" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZooLogicSA.Promociones\ZooLogicSA.Promociones.csproj">
+      <Project>{dbe6674b-f612-4f69-94f3-9a7847bd8d72}</Project>
+      <Name>ZooLogicSA.Promociones</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>-->
+</Project>

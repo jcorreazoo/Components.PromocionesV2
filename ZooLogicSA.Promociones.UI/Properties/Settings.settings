@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ZooLogicSA.Promociones.UI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FontTitulo" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Tahoma, 8pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="FontRegular" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Tahoma, 8pt</Value>
+    </Setting>
+    <Setting Name="ColorTitulo" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">0, 169, 192</Value>
+    </Setting>
+    <Setting Name="ColorRegular" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="ColorBackground" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
