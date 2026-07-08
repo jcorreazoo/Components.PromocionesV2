@@ -25,5 +25,8 @@ metadata:
 13. **Scope carrito vs línea** as a first-class concept.
 14. Unify the **type codification** (today duplicated: `BeneficioType` 0–6 vs engine `Tipo` string).
 15. `TipoPromocion` (Negocio) is the base for "class per mechanic", but must be **decoupled from UI (masks/labels) and from SQL** (`ObtenerWhereAdicional`).
+16. Preserve the **real-time advisor UX** (the Asistente): traffic-light states (green/yellow/gray) + "what's missing" guidance + one-click apply, decoupled from WinForms/DevExpress and the FoxPro bridge. See [[promociones-asistente]].
+17. **Explicit, configurable application priority**: today several hardcoded orderings at different levels are conflated (see [[promociones-modelo-aplicacion]]); unify into one clear, configurable priority model.
+18. **Support both application strategies** — incremental (as articles load) and global recalculation — as explicit orchestration modes. There are 3 apply entry points to preserve: automatic, manual-by-name, assistant.
 
 Related: [[promociones-modelo-dominio]], [[rewrite-promociones-goal]], [[decision-framework-destino]].

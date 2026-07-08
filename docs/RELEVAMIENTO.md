@@ -28,7 +28,7 @@ El proyecto nuevo se reescribe desde cero; este relevamiento es el puente hacia 
 | `ZooLogicSA.Promociones` | **Núcleo / motor** de evaluación (la DLL). Cálculo puro. |
 | `ZooLogicSA.Promociones.Negocio` | Metadata de tipos de promo (`TipoPromocion` + subclases), beneficios, validaciones. |
 | `ZooLogicSA.Promociones.UI` | UserControls WinForms + **DevExpress** para autoría de promos. |
-| `ZooLogicSA.Promociones.Asistente` | Asistente WinForms. |
+| `ZooLogicSA.Promociones.Asistente` | **Asesor de promociones en tiempo real** (WinForms). Ver §6.1. |
 | `ZooLogicSA.Promociones.Tests` | Tests (Rhino Mocks). |
 
 ## 4. Interop con el sistema de facturación (FoxPro)
@@ -61,6 +61,40 @@ embebido en form FoxPro                        → Deserializar → EstablecerLi
 ```
 
 La promo **nace** en el UserControl, se serializa a **XML y se guarda como campo de texto en SQL** (del lado FoxPro), y **vuelve** al motor para decidir cuáles aplican (todas, o una puntual). El `Serializador` (XmlSerializer de `Promocion`) es la bisagra de ida y vuelta.
+
+### 6.1 El Asistente (asesor de promociones en tiempo real)
+
+`ZooLogicSA.Promociones.Asistente` es un **formulario flotante** (posicionable en pantalla), invocado desde el **menú de FoxPro**, que muestra **todas las promociones** con un **semáforo de estados** que se actualiza en vivo a medida que se arma el comprobante:
+
+| Estado (`enum estado`) | Color | Significado |
+|---|---|---|
+| `Cumplida` (0) | 🟢 Verde | `Afectaciones > 0` → se puede aplicar ya |
+| `Parcial` (1) | 🟡 Amarillo | factible pero falta algo; muestra **qué falta** (usa `InformacionPromocionIncumplida`: `SatisfechoEfectivo`/`Resultados`) |
+| `Incumplida` (2) | 🔘 Gris | no se cumple / estado por defecto |
+
+- **Actualización en tiempo real vía patrón observador:** el motor empuja resultados con `NotificadorServicioPromociones` → `IObservadorServicioPromociones` → `ObservadorPromocionSingleThread.PresentarPromocionesAplicables`, que recalcula el estado de cada promo y refresca el form.
+- **Guía al usuario:** en amarillo/gris, el subsistema `ArmadoDeLeyenda` arma el mensaje de **qué falta** para aplicar la promo.
+- **Doble clic para aplicar:** selecciona la promo, **calcula el beneficio**, **transforma el documento** (`TransformadorComprobante`) y **devuelve la info** para aplicarla (solo habilitado en verde / `estado.Cumplida`).
+
+> Nota para el diseño nuevo: esta **UX de asesor en tiempo real** (semáforo + guía de "qué falta" + aplicar en un clic) es una funcionalidad valiosa a preservar, hoy acoplada a WinForms/DevExpress y al bridge FoxPro.
+
+### 6.2 Modelo de aplicación de promociones
+
+**Tres formas de aplicar una promo:**
+1. **Automática** — las promos con el check "automáticas" (`Promocion.AplicaAutomaticamente`) se aplican **a medida que ingresan los artículos** al comprobante (`ServicioEvaluacionPromociones.AplicarPromocionesAutomaticas`).
+2. **Manual por nombre** — el usuario escribe el nombre de la promo en la factura; se evalúa (`EvaluarPromocionesIndividualmente` / `EvaluarYAplicarPromocion`) y si no se puede aplicar se informa (excepción / `InformacionPromocionIncumplida`).
+3. **Asistente** — doble clic en el asistente (§6.1).
+
+**La "prioridad" NO es única — son varias ordenaciones hardcodeadas en distintos niveles** (fuente histórica de confusión):
+
+| Dónde | Ordena por | Qué decide |
+|---|---|---|
+| `ServicioEvaluacionPromociones` (automáticas) | `MontoBeneficio` ↓, luego `FechaModificacion`/`HoraModificacion` ↓ | qué promo automática gana (mayor beneficio) |
+| `MotorPromociones.AplicarPromociones` | `AplicacionProductosIguales` (más restrictiva primero) | orden de aplicación en lote |
+| `ArmadorDeCoincidenciasPorUsabilidad` | `dificultad` (asc/desc) | qué ítems se consumen primero para cumplir la promo |
+| `TransformadorComprobante` | mayor/menor precio | a qué participante va el beneficio |
+
+**Dos estrategias de aplicación:** la **aplicación incremental es automática** — las promos automáticas se aplican solas a medida que se cargan los artículos. El **recálculo global es una decisión del usuario** (no lo hace el sistema por su cuenta): mediante una opción del menú de la factura, el usuario elige borrar todas las promos del comprobante y recalcular para priorizar desde una visión general. Ambas son concerns de la capa de orquestación.
 
 ## 7. Modelo de dominio
 
@@ -142,6 +176,8 @@ Motor de reglas/promociones **estilo supermercado**: beneficios y agrupamientos 
 - Promociones individuales como **datos/config** autorables por el negocio desde la UI (**data-driven**). NO una clase por promo.
 - Ya existe multi-hilo en el legacy; lo difícil no es el paralelismo sino la **capa de orquestación** (stacking/exclusividad/prioridad/exclusiones/consumo compartido), porque las promos apiladas son interdependientes (el consumo cambia lo disponible). El legacy evalúa en paralelo pero **aplica en secuencia**.
 
+> **🧭 Principio rector (estrella polar):** la v1 implementa **paridad + orquestación robusta** (opción 2), pero las **abstracciones se diseñan contra la visión completa** (el esquema supermercado, opción 3). Es decir: se construye el **esqueleto completo** y se le ponen solo los **músculos de v1**. El objetivo es que evolucionar hacia la visión sea **aditivo** (agregar mecánicas/condiciones como clases nuevas, sin tocar el núcleo) y **no un rewrite**. Cada decisión de arquitectura de v1 se valida con la pregunta: *"¿esto me deja llegar al supermercado agregando, sin rehacer?"*. Cimientos que deben quedar bien desde el día uno: modelo de condición general (cliente/fecha/cupón, no solo artículo/monto/pago), orquestación que contemple exclusiones/exclusividad, alcance carrito vs línea, y el arreglo de cantidad/monto/decimales.
+
 ## 12. Observaciones / decisiones de diseño
 
 1. Separar **autoría (UI)** del **motor** de evaluación.
@@ -159,6 +195,9 @@ Motor de reglas/promociones **estilo supermercado**: beneficios y agrupamientos 
 13. **Alcance carrito vs línea** como concepto de primera clase.
 14. Unificar la **codificación de tipos**.
 15. `TipoPromocion` es la base para "clase por mecánica", pero **desacoplado de UI y SQL**.
+16. Preservar la **UX de asesor en tiempo real** (Asistente §6.1): semáforo + guía de "qué falta" + aplicar en un clic, desacoplado de WinForms/DevExpress y del bridge FoxPro.
+17. **Prioridad de aplicación explícita y configurable**: hoy hay varias ordenaciones hardcodeadas en distintos niveles (§6.2) que se confunden entre sí; unificarlas en un modelo de prioridad claro y configurable.
+18. **Soportar ambas estrategias de aplicación** (incremental y recálculo global) como modos explícitos de la capa de orquestación.
 
 ## 13. Puntos asumidos / a validar con negocio
 
@@ -167,6 +206,12 @@ Motor de reglas/promociones **estilo supermercado**: beneficios y agrupamientos 
 
 ## 14. Decisiones tomadas
 
+- **Alcance del rewrite:** rediseño **completo** — motor + autoría (UI) + asistente — bien diseñado, escalable y arreglando los problemas de fondo. Lo único que se mantiene *por ahora* es la integración con FoxPro (salvo que sea extremadamente necesario cambiarla).
+- **Frontera con FoxPro (arquitectura):** el contrato actual (comprobante XML + bridge) es **fijo por ahora pero queda aislado detrás de un adaptador** (ports & adapters / hexagonal). El núcleo se diseña con su propio contrato limpio e ideal (un **puerto** = interfaz + DTOs neutrales); la integración FoxPro se encapsula en una capa adaptadora reemplazable sin tocar el núcleo.
+  - **La capa de comunicación es INTERNA — nada externo en el medio:** son clases dentro de la propia solución, en el mismo proceso (sin servicios aparte, middleware ni procesos externos).
+  - **Pensada para múltiples consumidores:** como el núcleo expone una API limpia y neutral, si otro sistema quiere usar la DLL de promociones solo hay que escribir su propio adaptador de comunicación (o llamar directo a la API), sin modificar el motor.
+  - Detalle a resolver en el diseño (no ahora): si el adaptador va en el mismo assembly que el núcleo o en un proyecto/assembly separado dentro de la misma solución (ambas opciones son internas; la separada ayuda a que el núcleo no dependa de FoxPro).
+- **Ambición de la v1:** **paridad con el sistema actual** (los 8 tipos + las 3 formas de aplicación), bien diseñado y resolviendo los problemas de fondo (cantidad/monto/decimales/prioridad), **+ una capa de orquestación robusta desde el arranque** (stacking / exclusividad / prioridad configurable). Las features amplias de la visión (segmentación, temporal, cupón, referido, exclusiones avanzadas) se difieren a después de la v1.
 - **Framework destino:** .NET Framework 4.7.2 (decisión de empresa).
 - **Metodología:** SDD con Spec Kit (requiere instalar `uv`; Python no está instalado; sí hay .NET 10 y git).
 - **Limpieza del repo:** al iniciar el proyecto nuevo se conservan `.claude/`, `CLAUDE.md`, dirs de Spec Kit, `docs/`, `.gitignore`, `.autorc`, `.teamcity`; se borra el resto y se hace historial limpio (rama huérfana + force-push).
