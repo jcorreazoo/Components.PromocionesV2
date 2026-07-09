@@ -6,6 +6,7 @@ Memoria persistente del proyecto, versionada dentro del repo. Una línea por arc
 - [Preferencia: preguntas de a una](pref-preguntas-de-a-una.md) — hacer las preguntas de a una, no varias juntas
 - [Decisión: framework destino](decision-framework-destino.md) — el proyecto nuevo apunta a .NET Framework 4.7.2 (decisión de la empresa)
 - [Decisión: alcance y v1](decision-alcance-v1.md) — rewrite completo, FoxPro aislado tras adaptador (hexagonal), v1 = paridad + orquestación robusta
+- [⚠️ Repo producción intocable](repo-produccion-intocable.md) — CRÍTICO: la producción vive en OTRO repo que NO se toca jamás; este (PromocionesV2) es el sandbox del rediseño
 - [Rewrite Promociones goal](rewrite-promociones-goal.md) — reescritura completa vía SDD/Spec Kit; preservar el contrato entrada→salida de la DLL, no los internals
 - [Promociones consumer VFP9](promociones-consumer-vfp9.md) — la DLL la consume un sistema de facturación en Visual FoxPro 9 + SQL Server; el límite de interop es crítico
 - [Promociones DLL contract](promociones-dll-contract.md) — C#/net472 x86, bridge CLR de ZooLogic (no COM registrado), comprobante XML de entrada, List&lt;InformacionPromocion&gt; de salida, motor de cálculo puro

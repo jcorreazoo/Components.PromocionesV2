@@ -11,7 +11,7 @@ Plan acordado (reescritura del motor de promociones con SDD/Spec Kit — ver [[r
 1. **Relevar** el proyecto actual ← ✅ COMPLETO Y VERIFICADO
 2. **Volcar el relevamiento a doc durable** ← ✅ COMPLETO → `docs/RELEVAMIENTO.md` + memorias
 3. **Inicializar Spec Kit** ← ⏳ PRÓXIMO PASO (instalar `uv`; Python NO está instalado; sí hay dotnet 10 y git)
-4. **Archivar legacy:** crear y pushear rama/tag `legacy` con el código viejo (NO se borra) ANTES de limpiar
+4. **Archivar el código pre-reescritura:** crear y pushear el **tag `snapshot-inicial`** con el código viejo (NO se borra) ANTES de limpiar. Para consultarlo luego sin ensuciar el proyecto nuevo: `git grep <patrón> snapshot-inicial`, `git show snapshot-inicial:<ruta>`, o `git worktree add ../snapshot-wt snapshot-inicial` (copia aparte donde funcionan Read/Grep/Glob normalmente). (Se evita el nombre `legacy`: se confunde con producción y con el sector "Legacy" de la empresa.)
 5. Borrar código viejo conservando: `.claude/`, `CLAUDE.md`, dirs de Spec Kit, `docs/`, `.gitignore`, `.autorc`, `.teamcity`
 6. Historial limpio en master → rama huérfana + force-push a GitHub
 
