@@ -19,7 +19,9 @@ Plan acordado (reescritura del motor de promociones con SDD/Spec Kit — ver [[r
 
 **Documentación revisada y decisiones de alcance tomadas** (ver [[decision-alcance-v1]]): rewrite completo (motor+UI+asistente), FoxPro aislado tras adaptador (hexagonal), v1 = paridad + orquestación robusta. El `RELEVAMIENTO.md` está completo y listo como insumo.
 
-**Próximo paso:** armar la **constitución** con `/speckit-constitution`, tomando `docs/RELEVAMIENTO.md` + las decisiones ([[decision-framework-destino]], [[decision-alcance-v1]]) como insumo. Después seguir con `/speckit-specify` → `/speckit-plan` → `/speckit-tasks` → `/speckit-implement` (opcionales: clarify/analyze/checklist). Los comandos son skills `/speckit-*`.
+**Constitución:** ✅ v1.0.0 en `.specify/memory/constitution.md` (commit `f1c9a31`). 7 principios: I Núcleo Aislado (hexagonal), II Motor Data-Driven (mecánica=clase, promo=dato), III Dominio Correcto (unidad obligatoria, monto≠cantidad), IV Orquestación (repetición configurable), V Separación de Responsabilidades (dominio sin UI/SQL), VI Verificable sin FoxPro (tests + banco de pruebas), VII Diseñar Contra la Visión (aditivo). Ver también [[decisiones-dominio]].
+
+**Próximo paso:** `/speckit-specify` — crear la especificación de la v1 tomando `docs/RELEVAMIENTO.md` + la constitución + [[decisiones-dominio]] como insumo. Después `/speckit-plan` → `/speckit-tasks` → `/speckit-implement` (opcionales: clarify/analyze/checklist). Los comandos son skills `/speckit-*`. Recordar: en `/plan` se define la estructura de proyectos (núcleo, adaptador FoxPro, UI, Asistente, tests, banco de pruebas).
 
 **Nota `uv`/entorno:** `uv` se instaló con winget; en shells nuevos el PATH necesita refresco: `$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')`. Enriquecimientos opcionales para el spec: glosario de negocio (característica, familia) y ejemplos reales de promos en XML como fixtures.
 
