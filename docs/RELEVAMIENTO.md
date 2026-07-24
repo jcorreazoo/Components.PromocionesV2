@@ -96,6 +96,8 @@ La promo **nace** en el UserControl, se serializa a **XML y se guarda como campo
 
 **Dos estrategias de aplicación:** la **aplicación incremental es automática** — las promos automáticas se aplican solas a medida que se cargan los artículos. El **recálculo global es una decisión del usuario** (no lo hace el sistema por su cuenta): mediante una opción del menú de la factura, el usuario elige borrar todas las promos del comprobante y recalcular para priorizar desde una visión general. Ambas son concerns de la capa de orquestación.
 
+**Repetición/consumo implícito (comportamiento legacy, a mejorar):** hoy el comportamiento de repetición NO es configurable — se **deriva del operador de la condición**: con `=` la promo **corta** en esa cantidad y **repite por defecto**; con `>` / `>=` da por cumplida al **alcanzar** el valor y **asigna a la promo todo lo que cumple de ahí para arriba** (con errores en casos puntuales). En el rediseño esto pasa a ser **explícito y configurable por promoción** (constitución, Principio IV): "aplicar una vez" vs "repetir mientras califique" + tope opcional.
+
 ## 7. Modelo de dominio
 
 Namespace `ZooLogicSA.Promociones.FormatoPromociones`. Idea central: **CONDICIONES → BENEFICIOS**.

@@ -14,6 +14,7 @@ Memoria persistente del proyecto, versionada dentro del repo. Una línea por arc
 - [Promociones lifecycle & UI](promociones-lifecycle-ui.md) — ciclo de vida de una promo: UserControl .NET (DevExpress) embebido en form FoxPro → se guarda como texto XML en SQL → vuelve al motor
 - [Promociones Asistente](promociones-asistente.md) — asesor en tiempo real: semáforo verde/amarillo/gris + guía de "qué falta" + aplicar con doble clic (patrón observador)
 - [Promociones modelo de aplicación](promociones-modelo-aplicacion.md) — 3 formas de aplicar (automática/manual/asistente), prioridad multinivel hardcodeada, incremental vs recálculo global
+- [Decisiones de dominio](decisiones-dominio.md) — unidad obligatoria, monto vs cantidad, repetición configurable; y cómo el legacy lo hace implícito por operador (`=` vs `>`/`>=`)
 - [Promociones modelo de dominio](promociones-modelo-dominio.md) — Promocion (participantes/reglas + beneficios), familias de participantes, mecanismos de beneficio y catálogo de 8 tipos
 - [Promociones visión nueva](promociones-vision-nueva.md) — visión estilo supermercado + las 15 observaciones de diseño para la reescritura
 - [Relevamiento completo](../../docs/RELEVAMIENTO.md) — documento consolidado (fuera de .claude, en docs/), insumo para Spec Kit
